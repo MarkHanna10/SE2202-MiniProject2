@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Explorer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <h1>Course Explorer</h1>
+
+  <div id="uploadArea">
+    <h2>Load Courses (JSON)</h2>
+    <input type="file" id="fileInput" accept=".json">
+    <p id="errorMsg"></p>
+  </div>
+
+  <div id="filterArea">
+    <h2>Sort and Filter</h2>
+
+    <label>Department:</label>
+    <select id="deptFilter"></select>
+
+    <label>Level:</label>
+    <select id="levelFilter"></select>
+
+    <label>Credits:</label>
+    <select id="creditsFilter"></select>
+
+    <label>Instructor:</label>
+    <select id="instrFilter"></select>
+
+    <label>Sort By:</label>
+    <select id="sortBy">
+      <option value="None">None</option>
+      <option value="idAZ">ID (A–Z)</option>
+      <option value="idZA">ID (Z–A)</option>
+      <option value="titleAZ">Title (A–Z)</option>
+      <option value="titleZA">Title (Z–A)</option>
+      <option value="semEarly">Semester (Earliest first)</option>
+      <option value="semLate">Semester (Latest first)</option>
+    </select>
+  </div>
+
+  <div id="contentArea">
+    <div id="layout">
+
+      <div id="courseList"></div>
+
+      <div id="details">
+        <p>Select a course to view details.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
