@@ -1,0 +1,50 @@
+body {
+  font-family: Arial;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#uploadArea,
+#filterArea,
+#contentArea {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#layout {
+  display: flex;
+  gap: 20px;
+}
+
+#courseList {
+  width: 30%;
+  border: 1px solid #bbb;
+  padding: 10px;
+  background: #f7f7f7;
+  height: 500px;
+  overflow-y: auto;
+}
+
+#courseList div {
+  padding: 8px;
+  margin-bottom: 6px;
+  background: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#details {
+  width: 70%;
+  border: 1px solid #bbb;
+  padding: 15px;
+  background: #fafafa;
+  min-height: 500px;
+}
+
+#errorMsg {
+  color: red;
+}
