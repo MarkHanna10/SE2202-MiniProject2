@@ -1,0 +1,122 @@
+[
+  {
+    "id": "SE 210",
+    "title": "Scripting Languages",
+    "department": "Software Engineering",
+    "level": "200",
+    "credits": 0.5,
+    "instructor": "Instructor A",
+    "semester": "Fall 2025",
+    "description": "JavaScript, the DOM, events and asynchronous programming."
+  },
+  {
+    "id": "SE 220",
+    "title": "Algorithms and Data Structures",
+    "department": "Software Engineering",
+    "level": "200",
+    "credits": 0.5,
+    "instructor": "Instructor B",
+    "semester": "Winter 2026",
+    "description": "Analysis and design of algorithms and core data structures."
+  },
+  {
+    "id": "SE 330",
+    "title": "Database Systems",
+    "department": "Software Engineering",
+    "level": "300",
+    "credits": 0.5,
+    "instructor": "Instructor C",
+    "semester": "Fall 2026",
+    "description": "Relational modelling, SQL and transaction processing."
+  },
+  {
+    "id": "SE 335",
+    "title": "Software Project Management",
+    "department": "Software Engineering",
+    "level": "300",
+    "credits": 0.5,
+    "instructor": "Instructor D",
+    "semester": "Fall 2026",
+    "description": "Planning, estimating and running software projects."
+  },
+  {
+    "id": "SE 340",
+    "title": "Requirements Engineering",
+    "department": "Software Engineering",
+    "level": "300",
+    "credits": 0.5,
+    "instructor": "Instructor C",
+    "semester": "Winter 2027",
+    "description": "Eliciting, modelling and validating requirements."
+  },
+  {
+    "id": "CS 120",
+    "title": "Object-Oriented Programming",
+    "department": "Computer Science",
+    "level": "100",
+    "credits": 0.5,
+    "instructor": "Instructor E",
+    "semester": "Winter 2025",
+    "description": "Classes, interfaces and basic data structures in Java."
+  },
+  {
+    "id": "CS 310",
+    "title": "Operating Systems",
+    "department": "Computer Science",
+    "level": "300",
+    "credits": 0.5,
+    "instructor": "Instructor F",
+    "semester": "Winter 2026",
+    "description": "Processes, threads, scheduling and memory management."
+  },
+  {
+    "id": "MATH 110",
+    "title": "Linear Algebra",
+    "department": "Mathematics",
+    "level": "100",
+    "credits": 0.5,
+    "instructor": "Instructor G",
+    "semester": "Fall 2024",
+    "description": "Vectors, matrices, systems of equations and determinants."
+  },
+  {
+    "id": "MATH 215",
+    "title": "Discrete Mathematics",
+    "department": "Mathematics",
+    "level": "200",
+    "credits": 0.5,
+    "instructor": "Instructor H",
+    "semester": "Fall 2025",
+    "description": "Logic, sets, proofs and discrete structures."
+  },
+  {
+    "id": "ECE 220",
+    "title": "Circuit Analysis",
+    "department": "Electrical Engineering",
+    "level": "200",
+    "credits": 0.5,
+    "instructor": "Instructor I",
+    "semester": "Winter 2025",
+    "description": "Circuit analysis fundamentals."
+  },
+  {
+    "id": "ENG 100",
+    "title": "Engineering Design",
+    "department": "Engineering Science",
+    "level": "100",
+    "credits": 1.0,
+    "instructor": "Instructor J",
+    "semester": "Fall 2024",
+    "description": "Design process, teamwork and technical communication."
+  },
+  {
+    "id": "BUS 120",
+    "title": "Introduction to Business",
+    "department": "Business",
+    "level": "100",
+    "credits": 1.0,
+    "instructor": "Instructor K",
+    "semester": "Spring 2025",
+    "description": "Core functions of a business organization."
+  }
+]

@@ -65,32 +65,47 @@ fileInput.addEventListener("change", async event => {
       return;
     }
 
-    if (!Array.isArray(data)) {
-      setError("JSON must contain an array of course objects.");
-      return;
-    }
-
-    if (data.length === 0) {
-      setError("JSON contains no courses.");
-      return;
-    }
-
-    const valid = data.every(obj => obj && typeof obj === "object" && typeof obj.id === "string");
-    if (!valid) {
-      setError("JSON contains incomplete course entries.");
-      return;
-    }
-
-    courses = data.map(v => new Course(v));
-
-    buildFilterOptions(courses);
-    renderCourseList(courses);
-    details.innerHTML = "<p>Select a course to view details.</p>";
-
+    loadCourses(data);
   } catch {
     setError("Failed to load file.");
   }
 });
+
+/* LOAD SAMPLE DATA */
+document.getElementById("sampleBtn").addEventListener("click", async () => {
+  clearError();
+  try {
+    const res = await fetch("data/sample-courses.json");
+    loadCourses(await res.json());
+  } catch {
+    setError("Failed to load sample data.");
+  }
+});
+
+/* VALIDATE AND DISPLAY */
+function loadCourses(data) {
+  if (!Array.isArray(data)) {
+    setError("JSON must contain an array of course objects.");
+    return;
+  }
+
+  if (data.length === 0) {
+    setError("JSON contains no courses.");
+    return;
+  }
+
+  const valid = data.every(obj => obj && typeof obj === "object" && typeof obj.id === "string");
+  if (!valid) {
+    setError("JSON contains incomplete course entries.");
+    return;
+  }
+
+  courses = data.map(v => new Course(v));
+
+  buildFilterOptions(courses);
+  renderCourseList(courses);
+  details.innerHTML = "<p>Select a course to view details.</p>";
+}
 
 /* FILTER OPTIONS */
 function buildFilterOptions(list) {
@@ -170,18 +185,25 @@ function renderCourseList(list) {
 }
 
 /* SHOW DETAILS */
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[ch]);
+}
+
 function showDetails(course) {
+  const show = v => escapeHtml(v || "N/A");
   details.innerHTML = `
-    <h2>${course.id}</h2>
+    <h2>${escapeHtml(course.id)}</h2>
 
-    <p><strong>Title:</strong> ${course.title || "N/A"}</p>
-    <p><strong>Department:</strong> ${course.department || "N/A"}</p>
-    <p><strong>Level:</strong> ${course.level || "N/A"}</p>
-    <p><strong>Credits:</strong> ${course.credits || "N/A"}</p>
-    <p><strong>Instructor:</strong> ${course.instructor || "N/A"}</p>
-    <p><strong>Semester:</strong> ${course.semester || "N/A"}</p>
+    <p><strong>Title:</strong> ${show(course.title)}</p>
+    <p><strong>Department:</strong> ${show(course.department)}</p>
+    <p><strong>Level:</strong> ${show(course.level)}</p>
+    <p><strong>Credits:</strong> ${show(course.credits)}</p>
+    <p><strong>Instructor:</strong> ${show(course.instructor)}</p>
+    <p><strong>Semester:</strong> ${show(course.semester)}</p>
 
-    <p>${course.description || ""}</p>
+    <p>${escapeHtml(course.description || "")}</p>
   `;
 }
 
